@@ -22,9 +22,8 @@ El proyecto sigue una estructura limpia, separando las pantallas en archivos ind
 
 ## 📸 Capturas del Proyecto
 
-| Welcome Screen | Login Screen | Register Screen |
+| Pantalla de bienvenida | Pantalla de inicio de sesión | Pantalla de registro |
 | :---: | :---: | :---: |
-| <img src="logo_bienvenido.png" width="200"> | <img src="logo_login.png" width="200"> | <img src="logo_register.png" width="200"> |
-
+| <img src="aplicación/logo_welcomeee.png" width="200"> | <img src="aplicación/logo_login.png" width="200"> | <img src="aplicación/logo_register.png" width="200"> |
 ---
 Desarrollado por **Agustín Massello Piccolo** - 2026
