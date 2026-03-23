@@ -42,7 +42,7 @@ class MainActivity : ComponentActivity() {
                 // El Scaffold maneja los bordes de la pantalla (barra de estado, etc.)
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     Box(modifier = Modifier.padding(innerPadding)) { // Usamos el padding acá
-                        LoginScreen()
+                        RegisterScreen()
                 }
             }
         }
