@@ -39,10 +39,10 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             Challenge1Theme {
-                // El Scaffold maneja los bordes de la pantalla (barra de estado, etc.)
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Box(modifier = Modifier.padding(innerPadding)) { // Usamos el padding acá
-                        RegisterScreen()
+                    Box(modifier = Modifier.padding(innerPadding)) {
+                        AppNavigation()
+                    }
                 }
             }
         }
@@ -50,57 +50,55 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun WelcomeScreen(modifier: Modifier = Modifier) {
+fun WelcomeScreen(
+    onNavigateToLogin: () -> Unit,
+    onNavigateToRegister: () -> Unit,
+    modifier: Modifier = Modifier
+) {
     Column(
         modifier = modifier
             .fillMaxSize()
-            .background(Color.White) // Fondo Blanco real
+            .background(Color.White)
             .padding(24.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
 
         Spacer(modifier = Modifier.height(40.dp))
 
-        // La imagen central
         Image(
             painter = painterResource(id = R.drawable.logo_welcome),
             contentDescription = "Welcome Illustration",
-            // Cambiamos el size fijo por un weight para que se adapte al espacio
             modifier = Modifier.weight(1.5f)
         )
 
         Spacer(modifier = Modifier.height(32.dp))
 
-        // Título Azul
         Text(
             text = "Discover Your\nDream Job here",
             color = Color(0xFF1F41BB),
             fontSize = 32.sp,
-            lineHeight = 40.sp, // <-- Ajustá este valor (más alto = más separación)
+            lineHeight = 40.sp,
             fontWeight = FontWeight.Bold,
             textAlign = TextAlign.Center
         )
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        // Subtítulo gris
         Text(
             text = "Explore all the existing job roles based on your\ninterest and study major",
             color = Color.DarkGray,
-            fontSize = 14.sp, // Acá tampoco
+            fontSize = 14.sp,
             textAlign = TextAlign.Center
         )
 
         Spacer(modifier = Modifier.height(64.dp))
 
-        // Fila para los botones (uno al lado del otro)
         Row(
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceEvenly
         ) {
-            // Botón Login (Azul)
             Button(
-                onClick = { /* TODO */ },
+                onClick = { onNavigateToLogin() },
                 modifier = Modifier
                     .weight(1f)
                     .height(50.dp),
@@ -111,9 +109,8 @@ fun WelcomeScreen(modifier: Modifier = Modifier) {
 
             Spacer(modifier = Modifier.width(16.dp))
 
-            // Botón Register (Transparente con texto negro)
             TextButton(
-                onClick = { /* TODO */ },
+                onClick = { onNavigateToRegister() },
                 modifier = Modifier
                     .weight(1f)
                     .height(50.dp)
@@ -130,7 +127,6 @@ fun WelcomeScreen(modifier: Modifier = Modifier) {
 @Composable
 fun WelcomeScreenPreview() {
     Challenge1Theme {
-        WelcomeScreen()
+         WelcomeScreen(onNavigateToLogin = {}, onNavigateToRegister = {})
     }
-}
 }
