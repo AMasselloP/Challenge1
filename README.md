@@ -20,5 +20,11 @@ El proyecto sigue una estructura limpia, separando las pantallas en archivos ind
 * `AppNavigation.kt`: Enrutador central de la aplicación.
 * `LoginScreen.kt` / `RegisterScreen.kt`: Definición de componentes de UI.
 
+## 📸 Capturas de Pantalla
+
+| Welcome Screen | Login Screen | Register Screen |
+| :---: | :---: | :---: |
+| <img src="screenshots/logo_welcomeee.png" width="200"> | <img src="screenshots/logo_login.png" width="200"> | <img src="screenshots/logo_register.png" width="200"> |
+
 
 Desarrollado por **Agustín Massello Piccolo** - 2026
